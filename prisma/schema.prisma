@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL")
+}
+
+model Unit {
+  id           Int                    @id @default(autoincrement())
+  label        String
+  abbreviation String?
+  ingredients  IngredientsOnRecipes[]
+  createdAt    DateTime               @default(now()) @map(name: "created_at")
+  updatedAt    DateTime               @updatedAt @map(name: "updated_at")
+}
+
+model Ingredient {
+  id        Int                    @id @default(autoincrement())
+  name      String
+  recipes   IngredientsOnRecipes[]
+  createdAt DateTime               @default(now()) @map(name: "created_at")
+  updatedAt DateTime               @updatedAt @map(name: "updated_at")
+}
+
+model Step {
+  id        Int      @id @default(autoincrement())
+  recipe    Recipe   @relation(fields: [recipeId], references: [id])
+  title     String?
+  content   String
+  image     String?
+  recipeId  Int
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+}
+
+model Recipe {
+  id          Int                    @id @default(autoincrement())
+  title       String
+  ingredients IngredientsOnRecipes[]
+  steps       Step[]
+  createdAt   DateTime               @default(now()) @map(name: "created_at")
+  updatedAt   DateTime               @updatedAt @map(name: "updated_at")
+}
+
+model IngredientsOnRecipes {
+  recipe       Recipe     @relation(fields: [recipeId], references: [id])
+  recipeId     Int
+  ingredient   Ingredient @relation(fields: [ingredientId], references: [id])
+  ingredientId Int
+  amount       Int
+  unit         Unit       @relation(fields: [unitId], references: [id])
+  unitId       Int
+
+  @@id([recipeId, ingredientId])
+}
