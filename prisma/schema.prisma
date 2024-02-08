@@ -41,6 +41,9 @@ model Step {
 model Recipe {
   id          Int                    @id @default(autoincrement())
   title       String
+  description String
+  published   Boolean
+  featured    Boolean                @default(false)
   ingredients IngredientsOnRecipes[]
   steps       Step[]
   createdAt   DateTime               @default(now()) @map(name: "created_at")
