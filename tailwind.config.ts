@@ -16,7 +16,11 @@ const config: Config = {
       colors: {
         grey: { dark: '#191919' },
         yellow: { main: '#F5B200' },
+        red: { main: '#EA261A' },
         cream: '#F4F4DE',
+      },
+      fontFamily: {
+        Degular: ['degular', 'sans-serif'],
       },
     },
   },

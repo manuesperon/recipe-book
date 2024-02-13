@@ -1,3 +1,5 @@
+@import url('https://use.typekit.net/qwn2ajq.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +18,10 @@
   }
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
 }
@@ -30,13 +36,13 @@ body {
 
 @layer base {
   h1 {
-    @apply text-3xl md:text-5xl font-black lg:text-7xl;
+    @apply text-3xl md:text-5xl font-bold lg:text-7xl;
   }
   h2 {
-    @apply text-2xl font-bold lg:text-3xl;
+    @apply text-2xl font-semibold lg:text-3xl;
   }
   h3 {
-    @apply text-xl font-bold lg:text-2xl;
+    @apply text-xl font-semibold lg:text-2xl;
   }
   h4 {
     @apply text-xl font-bold;
