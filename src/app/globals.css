@@ -36,7 +36,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-3xl md:text-5xl font-bold lg:text-7xl;
+    @apply text-5xl sm:text-6xl lg:text-7xl font-bold;
   }
   h2 {
     @apply text-2xl font-semibold lg:text-3xl;

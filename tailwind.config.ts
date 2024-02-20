@@ -8,10 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '481px',
+      },
       backgroundImage: ({ theme }) => ({
-        'gradient-primary': `linear-gradient(to right, ${theme('colors.pink.800')}, ${theme('colors.red.500')}, ${theme(
-          'colors.yellow.500',
-        )})`,
+        underline: `linear-gradient(to right, ${theme('colors.yellow.main')}, ${theme('colors.yellow.main')})`,
       }),
       colors: {
         grey: { dark: '#191919' },
