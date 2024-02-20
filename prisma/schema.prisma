@@ -38,12 +38,23 @@ model Step {
   updatedAt DateTime @updatedAt @map(name: "updated_at")
 }
 
+model Category {
+  id        Int      @id @default(autoincrement())
+  label     String
+  recipes   Recipe[]
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
+}
+
 model Recipe {
   id          Int                    @id @default(autoincrement())
   title       String
   description String
   published   Boolean
   featured    Boolean                @default(false)
+  duration    Int
+  image       String
+  categories  Category[]
   ingredients IngredientsOnRecipes[]
   steps       Step[]
   createdAt   DateTime               @default(now()) @map(name: "created_at")
