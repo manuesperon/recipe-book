@@ -53,7 +53,7 @@ model Recipe {
   published   Boolean
   featured    Boolean                @default(false)
   duration    Int
-  image       String
+  image       String?
   categories  Category[]
   ingredients IngredientsOnRecipes[]
   steps       Step[]
