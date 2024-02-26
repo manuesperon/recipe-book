@@ -48,7 +48,7 @@ const Header = () => {
       </button>
       <div
         className={clsx(
-          'absolute left-0 right-0 py-4 overflow-hidden transition-all border-b-2 bg-grey-dark border-yellow-main px-9',
+          'absolute left-0 right-0 py-4 overflow-hidden transition-all border-b-2 bg-grey-dark border-yellow-main px-9 sm:hidden',
           {
             'h-36 top-16': showMobileMenu,
             'h-0 -top-20': !showMobileMenu,
