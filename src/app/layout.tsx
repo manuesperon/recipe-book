@@ -17,7 +17,7 @@ const RootLayout = ({
     <html lang="en">
       <body className={`min-h-screen flex flex-col bg-grey-dark text-cream font-Degular`}>
         <Header />
-        <main className="w-[100%] px-4 py-8 sm:py-12 lg:px-28 mx-auto mt-16">{children}</main>
+        <main className="md:container w-[100%] px-4 py-8 sm:py-12 mx-auto mt-16">{children}</main>
         <Footer />
       </body>
     </html>
