@@ -8,3 +8,8 @@ export const getTimeString = (minutes: number) => {
 
   return timeString;
 };
+
+export const getFormattedIngredient = (name: string, amount: number, unit: string) => {
+  const formattedUnit = unit === 'whole' ? '(whole)' : unit;
+  return `${name} — ${amount} ${formattedUnit}`;
+};
