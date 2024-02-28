@@ -18,28 +18,28 @@ const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const headerItemStyles =
-    'relative after:w-[100%] after:transition after:ease-in-out after:absolute after:scale-x-0 after:origin-center after:bg-yellow-main after:h-[2px] after:left-0 after:-bottom-1';
+    'relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-[100%] after:origin-center after:scale-x-0 after:bg-yellow-main after:transition after:ease-in-out';
   return (
-    <header className="h-16 bg-grey-dark fixed w-[100%] z-10 flex sm:justify-around justify-between sm:px-0 px-4 items-center border-b-2 border-yellow-main">
+    <header className="fixed z-10 flex h-16 w-[100%] items-center justify-between border-b-2 border-yellow-main bg-grey-dark px-4 sm:justify-around sm:px-0">
       <Link className={`text-2xl font-bold ${sacramento.className}`} href="/">
         <div className="text-yellow-main">Recipe Book</div>
       </Link>
-      <div className="items-center hidden sm:flex">
-        <Link className="flex items-center mr-4 [&>span]:hover:after:scale-x-100" href="/recipes">
+      <div className="hidden items-center sm:flex">
+        <Link className="mr-4 flex items-center [&>span]:hover:after:scale-x-100" href="/recipes">
           <BookIcon className="mr-1 fill-cream" width={14} height={14} />
           <span className={headerItemStyles}>All recipes</span>
         </Link>
         <Link
-          className="flex items-center [&>svg]:hover:rotate-180 [&>span]:hover:after:scale-x-100"
-          href="/add-recipe"
+          className="flex items-center [&>span]:hover:after:scale-x-100 [&>svg]:hover:rotate-180"
+          href="/recipes/add"
         >
-          <PlusIcon className="mr-1 transition-all duration-500 fill-cream" width={14} height={14} />
+          <PlusIcon className="mr-1 fill-cream transition-all duration-500" width={14} height={14} />
           <span className={headerItemStyles}>Add new recipe</span>
         </Link>
       </div>
 
       {/* Mobile menu */}
-      <button className="block rounded-full sm:hidden padding-4" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+      <button className="padding-4 block rounded-full sm:hidden" onClick={() => setShowMobileMenu(!showMobileMenu)}>
         {showMobileMenu ? (
           <XIcon width={20} height={20} className="fill-cream" />
         ) : (
@@ -48,20 +48,20 @@ const Header = () => {
       </button>
       <div
         className={clsx(
-          'absolute left-0 right-0 py-4 overflow-hidden transition-all border-b-2 bg-grey-dark border-yellow-main px-9 sm:hidden',
+          'absolute left-0 right-0 overflow-hidden border-b-2 border-yellow-main bg-grey-dark px-9 py-4 transition-all sm:hidden',
           {
-            'h-36 top-16': showMobileMenu,
-            'h-0 -top-20': !showMobileMenu,
+            'top-16 h-36': showMobileMenu,
+            '-top-20 h-0': !showMobileMenu,
           },
         )}
       >
-        <div className="flex flex-col justify-around h-[100%]">
+        <div className="flex h-[100%] flex-col justify-around">
           <Link className="flex items-center" href="/recipes">
             <BookIcon className="mr-1 fill-cream" width={16} height={16} />
             <span className="text-xl">All recipes</span>
           </Link>
-          <Link className="flex items-center" href="/add-recipe">
-            <PlusIcon className="mr-1 transition-all duration-500 fill-cream" width={16} height={16} />
+          <Link className="flex items-center" href="/recipes/add">
+            <PlusIcon className="mr-1 fill-cream transition-all duration-500" width={16} height={16} />
             <span className="text-xl">Add new recipe</span>
           </Link>
         </div>

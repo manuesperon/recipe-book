@@ -16,7 +16,7 @@ const Home = () => {
         Here is a list of the most popular recipes, click{' '}
         <Link
           href="/recipes"
-          className="underline transition-colors duration-300 decoration-yellow-main underline-offset-4 hover:text-yellow-main"
+          className="underline decoration-yellow-main underline-offset-4 transition-colors duration-300 hover:text-yellow-main"
         >
           here
         </Link>{' '}
@@ -27,7 +27,7 @@ const Home = () => {
         <RecipeList featured />
       </Suspense>
 
-      <div className="border-l-2 border-yellow-main h-36"></div>
+      <div className="h-36 border-l-2 border-yellow-main"></div>
 
       <Link href="/recipes">
         <Button>Explore my recipe collection</Button>

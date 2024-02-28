@@ -11,7 +11,7 @@ const Button = ({ children, className, ...props }: ButtonProps) => {
       {...props}
       className={clsx(
         className,
-        'px-4 py-2 transition-all duration-300 ease-in-out shadow-xl hover:bg-cream text-xl text-grey-dark rounded-3xl bg-yellow-main',
+        'rounded-3xl bg-yellow-main px-4 py-2 text-xl text-grey-dark shadow-xl transition-all duration-300 ease-in-out hover:bg-cream',
       )}
     >
       {children}

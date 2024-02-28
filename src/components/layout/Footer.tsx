@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="text-center p-8 mt-auto">
+    <footer className="mt-auto p-8 text-center">
       <p>
         Created by{' '}
         <a
-          className="hover:text-yellow-main transition-colors duration-300"
+          className="transition-colors duration-300 hover:text-yellow-main"
           href="https://manuesperon.com/"
           target="_blank"
         >

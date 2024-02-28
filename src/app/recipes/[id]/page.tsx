@@ -20,11 +20,11 @@ const RecipePage = async ({ params }: { params: { id: string } }) => {
   return (
     <div className="flex flex-col items-center">
       <div className="w-[100%] xl:flex ">
-        <div className="xl:px-8 basis-1/2 flex flex-col gap-8">
-          <h1 className="relative w-fit after:animate-slideFromLeft after:absolute after:bg-yellow-main after:h-2 after:-bottom-4 after:left-0">
+        <div className="flex basis-1/2 flex-col gap-8 xl:px-8">
+          <h1 className="relative w-fit after:absolute after:-bottom-4 after:left-0 after:h-2 after:animate-slideFromLeft after:bg-yellow-main">
             {title}
           </h1>
-          <div className="md:h-[400px] h-[200px] w-[100%] overflow-hidden relative xl:hidden">
+          <div className="relative h-[200px] w-[100%] overflow-hidden md:h-[400px] xl:hidden">
             <Image
               src={image ?? '/recipe-placeholder.png'}
               alt="recipe-photo"
@@ -34,8 +34,8 @@ const RecipePage = async ({ params }: { params: { id: string } }) => {
           </div>
           <div>
             <p className="text-xl italic">{description}</p>
-            <div className="flex items-baseline mt-2">
-              <ClockIcon height={10} width={10} className="mr-2 transition-all duration-500 fill-cream" />
+            <div className="mt-2 flex items-baseline">
+              <ClockIcon height={10} width={10} className="mr-2 fill-cream transition-all duration-500" />
               <span>{getTimeString(duration)}</span>
             </div>
           </div>
@@ -44,16 +44,16 @@ const RecipePage = async ({ params }: { params: { id: string } }) => {
 
           <div>
             <h2>Ingredient list</h2>
-            <p className="italic text-xl mt-2">Make sure you have everything before you start cooking</p>
-            <div className="border border-dashed border-yellow-main mt-4 p-4">
+            <p className="mt-2 text-xl italic">Make sure you have everything before you start cooking</p>
+            <div className="mt-4 border border-dashed border-yellow-main p-4">
               {ingredients.map(({ ingredient: { id, name }, amount, unit }: IngredientWithUnit) => (
                 <Checkbox key={id} label={getFormattedIngredient(name, amount, unit.abbreviation ?? '')} />
               ))}
             </div>
           </div>
-          <Button className="w-[250px] mx-auto">Start cooking</Button>
+          <Button className="mx-auto w-[250px]">Start cooking</Button>
         </div>
-        <div className="px-2 basis-1/2 xl:block hidden relative">
+        <div className="relative hidden basis-1/2 px-2 xl:block">
           <Image
             src={image ?? '/recipe-placeholder.png'}
             alt="recipe-photo"

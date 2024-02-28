@@ -11,24 +11,14 @@ type CheckboxProps = {
 const Checkbox = ({ label, className }: CheckboxProps) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
-    <label className={clsx(className, 'flex items-center cursor-pointer')}>
+    <label className={clsx(className, 'flex cursor-pointer items-center')}>
       <input type="checkbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
       <span
-        className={clsx('relative inline-block size-5 border border-cream rounded-sm transition-all duration-300', {
+        className={clsx('relative inline-block size-5 rounded-sm border border-cream transition-all duration-300', {
           'border-cream-light': isChecked,
         })}
       >
-        <svg
-          // className="absolute -top-[8px] -left-[5px]"
-          // width={30}
-          // height={30}
-          version="1.1"
-          id="tick"
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          viewBox="0 0 37 37"
-        >
+        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 37 37">
           <polyline
             className={clsx('tick path fill-none stroke-cream-light', {
               'transition-all duration-300 ease-in': isChecked,
@@ -44,7 +34,7 @@ const Checkbox = ({ label, className }: CheckboxProps) => {
       </span>
       <span
         className={clsx(
-          'ml-2 pb-[2px] text-lg bg-text-strike bg-no-repeat bg-[0_50%] transition-all origin-left duration-300',
+          'ml-2 origin-left bg-text-strike bg-[0_50%] bg-no-repeat pb-[2px] text-lg transition-all duration-300',
           {
             'bg-[length:100%_1px] text-cream-light': isChecked,
             'bg-[length:0%_1px]': !isChecked,

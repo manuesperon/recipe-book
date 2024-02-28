@@ -15,9 +15,9 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={`min-h-screen flex flex-col bg-grey-dark text-cream font-Degular`}>
+      <body className={`flex min-h-screen flex-col bg-grey-dark font-Degular text-cream`}>
         <Header />
-        <main className="md:container w-[100%] px-4 py-8 sm:py-12 mx-auto mt-16">{children}</main>
+        <main className="mx-auto mt-16 w-[100%] px-4 py-8 md:container sm:py-12">{children}</main>
         <Footer />
       </body>
     </html>
