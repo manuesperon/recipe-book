@@ -1,4 +1,4 @@
-export const apiUrl =
+export const API_URL =
   process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api' : 'https://recipe-book-six-sepia.vercel.app/api';
 
 export const MAX_FILE_SIZE = 2000000;

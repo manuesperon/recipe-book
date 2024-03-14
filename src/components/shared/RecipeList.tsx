@@ -1,4 +1,4 @@
-import { apiUrl } from '@/utils/constants';
+import { API_URL } from '@/utils/constants';
 import { Recipe } from '@prisma/client';
 import RecipeCard from './RecipeCard';
 
@@ -7,7 +7,7 @@ type RecipeListProps = {
 };
 
 const getFeaturedRecipes = async (featured: boolean) => {
-  const res = await fetch(`${apiUrl}/recipes?featured=${featured}`, { cache: 'no-store' });
+  const res = await fetch(`${API_URL}/recipes?featured=${featured}`, { cache: 'no-store' });
   if (!res.ok) return null;
 
   return res.json();

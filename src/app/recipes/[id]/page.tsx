@@ -2,12 +2,12 @@ import ClockIcon from '@/components/icons/ClockIcon';
 import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
 import { IngredientWithUnit, RecipeWithIngredients } from '@/types';
-import { apiUrl } from '@/utils/constants';
+import { API_URL } from '@/utils/constants';
 import { getFormattedIngredient, getTimeString } from '@/utils/formatting';
 import Image from 'next/image';
 
 const getRecipe = async (id: string) => {
-  const res = await fetch(`${apiUrl}/recipes/${id}`, { cache: 'no-store' });
+  const res = await fetch(`${API_URL}/recipes/${id}`, { cache: 'no-store' });
   if (!res.ok) return null;
 
   return res.json();
