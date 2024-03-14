@@ -37,6 +37,10 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+* {
+  scroll-margin-top: 70px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
