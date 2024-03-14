@@ -43,11 +43,17 @@ body {
   }
 }
 
+@layer components {
+  .focus-styles {
+    @apply outline outline-2 -outline-offset-2;
+  }
+}
+
 /* Configure heading sizes */
 
 @layer base {
   h1 {
-    @apply text-5xl sm:text-6xl lg:text-7xl font-bold;
+    @apply text-5xl font-bold sm:text-6xl lg:text-7xl;
   }
   h2 {
     @apply text-2xl font-semibold lg:text-3xl;
